@@ -1,0 +1,74 @@
+{
+  "name": "garage-tools",
+  "version": "0.1.0",
+  "description": "IBM Garage for Cloud command-line tools for use in developing Node.js applications.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-garage/node-garage-tools.git"
+  },
+  "author": "Dave Steinberg <davidms@ca.ibm.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --verbose --coverage",
+    "lint": "eslint bin",
+    "format": "prettier --write '**/*.@(js|json)'",
+    "release": "standard-version"
+  },
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "files": [
+    "bin/"
+  ],
+  "bin": {
+    "cfutil": "bin/cfutil.js"
+  },
+  "dependencies": {
+    "commander": "^8.2.0",
+    "eol": "^0.9.1",
+    "garage-utils": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.1",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "es2017": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2019
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "none"
+        }
+      ],
+      "global-require": "error",
+      "no-new-require": "error",
+      "no-path-concat": "error",
+      "no-var": "error",
+      "no-process-exit": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100
+  }
+}
